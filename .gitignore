@@ -1,0 +1,75 @@
+# CRAFT ENVIRONMENT
+.env.php
+.env.sh
+.env
+.vagrant/
+
+# CRAFT STORAGE
+/craft/storage/*
+/storage/*
+craft/web/cpresources/*
+
+# IMAGER TRANSFORMS
+/public/imager/*
+/web/imager/*
+craft/public/imager/*
+craft/web/imager/*
+
+# NODE
+node_modules/
+public/node_modules
+
+# GULP
+.tmp/
+
+# COMPOSER
+/vendor
+composer.phar
+.sass-cache/
+.settings/
+**/composer.lock
+
+# BUILD FILES
+/bower_components/*
+/node_modules/*
+/build/*
+/yarn-error.log
+
+# LOCAL CONFIGS
+config/autoload/*.local.php
+
+# DATA
+data/logs/
+data/cache/
+data/sessions/
+data/tmp/
+temp/
+
+#DOCTRINE 2
+data/DoctrineORMModule/Proxy/
+data/DoctrineORMModule/cache/
+*.php~
+
+# LEGACY ZF1
+demos/
+extras/documentation
+library/Zend/
+
+# MISC FILES
+.cache
+.DS_Store
+.idea
+.project
+*.esproj
+*.sublime-workspace
+*.sublime-project
+*.tmproj
+*.tmproject
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+config.codekit3
+prepros-6.config
+*.mo
