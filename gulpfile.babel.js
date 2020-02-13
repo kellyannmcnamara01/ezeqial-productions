@@ -17,7 +17,7 @@ const DIST_SCRIPTS = "craft/web/dist/scripts";
 const DIST_STYLES = "craft/web/dist/styles";
 //const DIST_IMAGES = "craft/web/dist/images";
 
-const LOCALSERVER = "local.zack-bernbaum";
+const LOCALSERVER = "local.ezeqial-productions";
 
 const AUTOPREFIXER_BROWSERS = [
     'ie >= 10',

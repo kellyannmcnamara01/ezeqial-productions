@@ -1,0 +1,56 @@
+@import "_includes";
+
+* {
+    box-sizing: border-box;
+}
+html {
+    overflow-x: hidden;
+    font-size: 62.5%;
+    // @include desktop-large-below {
+    //     font-size: 60%;
+    // }
+    // @include desktop-medium-below {
+    //     font-size: 55%;
+    // }
+    // @include desktop-small-below {
+    //     font-size: 52%;
+    // }
+    // @include tablet-below {
+    //     font-size: 50%;
+    // }
+    // @include phone-large-below {
+    //     font-size: 40%;
+    // }
+}
+
+
+// body {
+//     font-family: $body-font;
+//     background-color: $blue;
+//     font-feature-settings: "liga" 0;
+//     font-size: 1.6rem;
+
+//     @include phone-large-below {
+//         font-size: 2rem;
+//     }
+// }
+
+// .wrapper {
+//     max-width: 1680px;
+//     width: 100%;
+//     padding: 0 3rem;
+//     margin: 0 auto;
+
+//     @include tablet-large-below {
+//         padding: 0;
+//     }
+// }
+
+
+
+
+
+
+
+
+
