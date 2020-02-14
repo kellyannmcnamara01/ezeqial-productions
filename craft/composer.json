@@ -3,6 +3,7 @@
     "anubarak/craft-relabel": "1.3.4",
     "craftcms/cms": "^3.4.0",
     "ether/seo": "3.6.3",
+    "verbb/expanded-singles": "1.0.9",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
