@@ -1,5 +1,23 @@
 {% extends "layouts/_layout" %}
 
 {% block content %}
-	<h1>production index</h1>
+	<span class="veritcal-outlined-text">Production</span>
+	<h1 class="heading-one">Production</h1>
+
+	<div class="production-cards">
+
+		{% for caseStudy in craft.entries.section('productionCaseStudies').orderBy('dateCreated desc').all() %}
+			<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card">
+				<div class="production-card__image">
+					{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
+					<img src="{{ poster }}" alt=""/>
+				</div>
+				<div class="production-card__info">
+					<h2 class="">{{ caseStudy.title }}</h2>
+				</div>
+				<span class="production-card__view-flag">View Details</span>
+			</a>
+		{% endfor %}
+
+	</div>
 {% endblock %}
