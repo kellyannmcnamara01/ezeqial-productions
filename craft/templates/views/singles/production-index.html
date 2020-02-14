@@ -10,7 +10,7 @@
 			<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card">
 				<div class="production-card__image">
 					{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
-					<img src="{{ poster }}" alt=""/>
+					<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
 				</div>
 				<div class="production-card__info">
 					<h2 class="">{{ caseStudy.title }}</h2>
