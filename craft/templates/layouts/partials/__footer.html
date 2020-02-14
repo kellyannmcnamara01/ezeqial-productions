@@ -17,30 +17,14 @@
 	</nav>
 	<nav class="footer-social">
 		<ul class="footer-social__links">
-			<li class="footer-social__link">
-				<a href="" aria-label="Check out ezeqial productions facebook page" target="_blank">
-					<span class="icon-facebook"></span>
-					<span class="new-window-alert">Opens in a new window</span>
-				</a>
-			</li>
-			<li class="footer-social__link">
-				<a href="" aria-label="Check out ezeqial productions instagram page" target="_blank">
-					<span class="icon-instagram"></span>
-					<span class="new-window-alert">Opens in a new window</span>
-				</a>
-			</li>
-			<li class="footer-social__link">
-				<a href="" aria-label="Check out ezeqial productions twitter page" target="_blank">
-					<span class="icon-twitter"></span>
-					<span class="new-window-alert">Opens in a new window</span>
-				</a>
-			</li>
-			<li class="footer-social__link">
-				<a href="" aria-label="Check out ezeqial productions vimeo page" target="_blank">
-					<span class="icon-vimeo"></span>
-					<span class="new-window-alert">Opens in a new window</span>
-				</a>
-			</li>
+			{% for social in social.socialAccounts %}
+				<li class="footer-social__link">
+					<a href="{{ social.accountLink.url }}" aria-label="{{ social.accountLink.getAriaLabel() }}" target="_blank">
+						<span class="icon-{{ social.accountLink.getTitle() }}"></span>
+						<span class="new-window-alert">Opens in a new window</span>
+					</a>
+				</li>
+			{% endfor %}
 		</ul>
 	</nav>
 </footer>
