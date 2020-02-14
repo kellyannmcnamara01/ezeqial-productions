@@ -1,6 +1,7 @@
 {
   "require": {
     "craftcms/cms": "^3.4.0",
+    "ether/seo": "3.6.3",
     "fatfish/navigation": "1.0.7",
     "vlucas/phpdotenv": "^3.4.0"
   },
