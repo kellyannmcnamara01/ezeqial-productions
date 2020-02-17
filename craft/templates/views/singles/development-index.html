@@ -4,12 +4,75 @@
 	<span class="veritcal-outlined-text">Development</span>
 	<h1 class="heading-one">Development</h1>
 
-	<section class="dev-accordion">
-		<button aria-expanded="true" aria-controls="id-01">
-			<h2 class="heading-two">Lorem Ipsum dolor sit amet</h2>
-			<h3 class="heading-three">Format:</h3>
-			<p>Feature Film</p>
-			<span class="dev-accordion__arrow"></span>
+	<div class="accordion" id="accordion_group">
+		{# accordion row #}
+		<button aria-expanded="false" class="accordion__trigger" aria-controls="accordion-1" id="accordion-btn-1">
+			<span class="accordion__btn-copy">
+				<h2 class="heading-two accordion__title">Project title placement</h2>
+				<h3 class="accordion__subtitle"><strong>Format:</strong> format placement</h3>
+			</span>
+			<span class="accordion__btn-icon"></span>
 		</button>
-	</section>
+		<div id="accordion-1" role="region" aria-labelledby="accordion-btn-1" class="accordion-panel" hidden="true">
+			<div>
+				<div class="accordion-panel__visual">
+					<img src="" alt=""/>
+				</div>
+				<div>
+					<h4 class="heading-four">Title Placement</h4>
+					<p>Lorem ipsum dolor sit amet neque</p>
+					<h4 class="heading-four">Title Placement</h4>
+					<p>Lorem ipsum dolor sit amet neque</p>
+					<h4 class="heading-four">Title Placement</h4>
+					<p>Lorem ipsum dolor sit amet neque</p>
+				</div>
+				<div>
+					<h4 class="heading-four">Synopsis</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut vehicula risus, non fermentum lorem. In sit amet ante vestibulum, laoreet risus et, suscipit odio. Etiam egestas, purus quis facilisis viverra, neque risus luctus erat, non vestibulum mi nisi a orci. Cras sodales leo vitae eleifend facilisis.</p>
+				</div>
+			</div>
+		</div>
+		{# [END] accordion row #}
+		{# accordion row #}
+		<button aria-expanded="false" class="accordion__trigger" aria-controls="accordion-2" id="accordion-btn-2">
+			<span class="accordion__btn-copy">
+				<h2 class="heading-two accordion__title">Project title placement</h2>
+				<h3 class="accordion__subtitle"><strong>Format:</strong> format placement</h3>
+			</span>
+			<span class="accordion__btn-icon"></span>
+		</button>
+		<div id="accordion-2" role="region" aria-labelledby="accordion-btn-2" class="accordion-panel" hidden="true">
+			<div>
+				<div class="accordion-panel__visual">
+					<img src="" alt=""/>
+				</div>
+				<div>
+					<h4 class="heading-four">Title Placement</h4>
+					<p>Lorem ipsum dolor sit amet neque</p>
+					<h4 class="heading-four">Title Placement</h4>
+					<p>Lorem ipsum dolor sit amet neque</p>
+					<h4 class="heading-four">Title Placement</h4>
+					<p>Lorem ipsum dolor sit amet neque</p>
+				</div>
+				<div>
+					<h4 class="heading-four">Synopsis</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut vehicula risus, non fermentum lorem. In sit amet ante vestibulum, laoreet risus et, suscipit odio. Etiam egestas, purus quis facilisis viverra, neque risus luctus erat, non vestibulum mi nisi a orci. Cras sodales leo vitae eleifend facilisis.</p>
+				</div>
+			</div>
+		</div>
+		{# [END] accordion row #}
+	</div>
+
+	<script type="text/javascript">
+		$('.accordion__trigger').click(function(){
+			// grabbing accordion controls and id + the accordion's panel
+			var ariaControls = $(this).attr('aria-controls'),
+				accordionId = $(this).attr('id'),
+				accordionPanel = $('accordion-panel[id="' + accordionId + '"]');
+
+			// setting all accordions to expanded false expect the one clicked
+			$('.accordion__trigger').attr('aria-expanded', false);
+			$(this).attr('aria-expanded', true);
+		});
+	</script>
 {% endblock %}
