@@ -18,5 +18,12 @@ window.addEventListener("load", function(){
 		// setting all panels to hidden true expect the one clicked
 		$('.accordion-panel').attr('hidden', true);
 		accordionPanel.attr('hidden', false);
+
+		// change url to include selected hash
+		window.location.hash = ariaControls;
+
+		$('html, body').animate({
+			scrollTop: $(this).offset().top - 100
+		}, 1000);
 	});
 });
