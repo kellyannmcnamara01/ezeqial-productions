@@ -35,8 +35,7 @@ const SRC_STYLES = "craft/web/src/styles/main.scss";
 
 const SRC_SCRIPTS = [
     'craft/web/src/scripts/vendor/jquery.min.js',
-    'craft/web/src/scripts/vendor/jquery.fancybox.min.js',
-    // 'craft/web/src/scripts/vendor/jquery.fancybox-thumbs.js',
+    // 'craft/web/src/scripts/vendor/jquery.fancybox.min.js',
     'craft/web/src/scripts/site-scripts.js'
 ];
 
@@ -44,7 +43,6 @@ const SRC_SCRIPTS = [
 
 const SRC_SCRIPTS_ES6 = [
 ];
-
 
 
 // Compile and automatically prefix stylesheets
@@ -96,9 +94,6 @@ gulp.task('es6scripts', () =>
         .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest(DIST_SCRIPTS))
 );
-
-
-
 
 
 gulp.task('default', [
