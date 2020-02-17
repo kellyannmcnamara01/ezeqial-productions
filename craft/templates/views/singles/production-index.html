@@ -2,21 +2,23 @@
 
 {% block content %}
 	<span class="veritcal-outlined-text">Production</span>
-	<h1 class="heading-one">Production</h1>
+	<section id="production-index-content" class="page-content">
+		<h1 class="heading-one">Production</h1>
 
-	<div class="production-cards">
-		{% for caseStudy in craft.entries.section('productionCaseStudies').orderBy('dateCreated desc').all() %}
-			<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card">
-				<div class="production-card__image">
-					{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
-					<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
-				</div>
-				<div class="production-card__info">
-					<h2 class="heading-two">{{ caseStudy.title }}</h2>
-				</div>
-				<span class="production-card__view-flag">View Details</span>
-			</a>
-		{% endfor %}
-	</div>
+		<div class="production-cards">
+			{% for caseStudy in craft.entries.section('productionCaseStudies').orderBy('dateCreated desc').all() %}
+				<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card">
+					<div class="production-card__image">
+						{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
+						<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
+					</div>
+					<div class="production-card__info">
+						<h2 class="heading-two">{{ caseStudy.title }}</h2>
+					</div>
+					<span class="production-card__view-flag">View Details</span>
+				</a>
+			{% endfor %}
+		</div>
+	</section>
 
 {% endblock %}
