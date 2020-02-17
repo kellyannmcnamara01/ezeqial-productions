@@ -62,17 +62,4 @@
 		</div>
 		{# [END] accordion row #}
 	</div>
-
-	<script type="text/javascript">
-		$('.accordion__trigger').click(function(){
-			// grabbing accordion controls and id + the accordion's panel
-			var ariaControls = $(this).attr('aria-controls'),
-				accordionId = $(this).attr('id'),
-				accordionPanel = $('accordion-panel[id="' + accordionId + '"]');
-
-			// setting all accordions to expanded false expect the one clicked
-			$('.accordion__trigger').attr('aria-expanded', false);
-			$(this).attr('aria-expanded', true);
-		});
-	</script>
 {% endblock %}
