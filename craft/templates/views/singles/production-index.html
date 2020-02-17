@@ -5,7 +5,6 @@
 	<h1 class="heading-one">Production</h1>
 
 	<div class="production-cards">
-
 		{% for caseStudy in craft.entries.section('productionCaseStudies').orderBy('dateCreated desc').all() %}
 			<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card">
 				<div class="production-card__image">
@@ -13,11 +12,11 @@
 					<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
 				</div>
 				<div class="production-card__info">
-					<h2 class="">{{ caseStudy.title }}</h2>
+					<h2 class="heading-two">{{ caseStudy.title }}</h2>
 				</div>
 				<span class="production-card__view-flag">View Details</span>
 			</a>
 		{% endfor %}
-
 	</div>
+
 {% endblock %}
