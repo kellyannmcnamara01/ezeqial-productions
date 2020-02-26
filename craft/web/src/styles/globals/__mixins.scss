@@ -1,0 +1,86 @@
+@mixin phone {
+  @media (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+@mixin phone-large {
+  @media (min-width: #{$phone-width}) and (max-width: #{$phone-large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin phone-large-below {
+  @media (max-width: #{$phone-large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-below {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-large-below {
+  @media (max-width: #{$tablet-large-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-small-below {
+  @media (max-width: #{$tablet-small-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-above {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-below {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-above {
+  @media (min-width: #{$desktop-width}){
+    @content;
+  }
+}
+
+@mixin desktop-small-below {
+  @media (max-width: #{$desktop-small-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-medium-below {
+  @media (max-width: #{$desktop-medium-width - 1px}) {
+    @content;
+  }
+}
+
+
+@mixin desktop-large-below {
+  @media (max-width: #{$desktop-large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-xlarge-below {
+  @media (max-width: #{$desktop-xlarge-width - 1px}) {
+    @content;
+  }
+}
+
+
