@@ -1,33 +1,33 @@
 <footer class="footer">
+	<div class="wrapper">
+		<nav class="footer-nav">
+			<ul class="footer-nav__links">
+				{% for footerLink in footerNavigation.navigationLink.all() %}
+					<li class="footer-nav__link">
+						<a 
+							href="{{ footerLink.linkInformation.getUrl() }}" 
+							aria-label="{{ footerLink.linkInformation.getAriaLabel() }}">
+							{{ footerLink.linkInformation.customText() }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
 
-	<nav class="footer-nav">
-		<ul class="footer-nav__links">
-			{% for footerLink in footerNavigation.navigationLink.all() %}
-				<li class="footer-nav__link">
-					<a 
-						href="{{ footerLink.linkInformation.getUrl() }}" 
-						aria-label="{{ footerLink.linkInformation.getAriaLabel() }}">
-						{{ footerLink.linkInformation.customText() }}
-					</a>
-				</li>
-			{% endfor %}
-		</ul>
-	</nav>
-
-	<nav class="footer-social">
-		<ul class="footer-social__links">
-			{% for social in social.socialAccounts.all() %}
-				<li class="footer-social__link">
-					<a 
-						href="{{ social.accountLink.getUrl() }}" 
-						aria-label="{{ social.accountLink.getAriaLabel() }}" 
-						target="_blank">
-							<span class="icon-{{ social.accountLink.getTitle() }}"></span>
-							<span class="new-window-alert">Opens in a new window</span>
-					</a>
-				</li>
-			{% endfor %}
-		</ul>
-	</nav>
-	
+		<nav class="footer-social">
+			<ul class="footer-social__links">
+				{% for social in social.socialAccounts.all() %}
+					<li class="footer-social__link">
+						<a 
+							href="{{ social.accountLink.getUrl() }}" 
+							aria-label="{{ social.accountLink.getAriaLabel() }}" 
+							target="_blank">
+								<i class="icon-{{ social.accountLink.getTitle() }}">X</i>
+								<span class="new-window-alert">Opens in a new window</span>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
 </footer>
