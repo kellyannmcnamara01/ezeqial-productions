@@ -2,9 +2,11 @@
 
 		{% include 'layouts/partials/__nav' %}
 
-		<div class="wrapper">
-			{% block content %}
-			{% endblock %}
+		<div class="page-content">
+			<div class="wrapper {{ entry.type|kebab }}">
+				{% block content %}
+				{% endblock %}
+			</div>
 		</div>
 
 		{% include 'layouts/partials/__footer' %}

@@ -1,5 +1,6 @@
 .footer {
 	width: 100%;
+	padding: 10rem 0 3rem;
 	
 	.wrapper {
 		display: flex;
@@ -17,6 +18,12 @@
 		text-decoration: none;
 		transition: 0.35s ease all;
 		position: relative;
+		transition: 0.35s ease all;
+
+		&:hover, &:focus {
+			outline: none;
+			color: $orange;
+		}
 	}
 }
 
@@ -31,8 +38,6 @@
 		margin-left: 4rem;
 
 		&:hover, &:focus {
-			outline: none;
-			color: $orange;
 
 			.new-window-alert {
 				opacity: 1;
