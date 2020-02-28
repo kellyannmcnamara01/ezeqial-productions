@@ -13,9 +13,11 @@
 						<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
 					</div>
 					<div class="production-card__info">
-						<h2 class="heading-two">{{ caseStudy.title }}</h2>
+						<h2 class="heading-two production-card__title">{{ caseStudy.title }}</h2>
+						<span class="production-card__view-flag">
+							<span>View Details</span>
+						</span>
 					</div>
-					<span class="production-card__view-flag">View Details</span>
 				</a>
 			{% endfor %}
 		</div>

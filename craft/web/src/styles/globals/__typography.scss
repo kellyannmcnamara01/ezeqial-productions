@@ -1,0 +1,25 @@
+.veritcal-outlined-text {
+	font-family: $font;
+	color: rgba($white, 0.2);
+	-webkit-text-fill-color: $grey;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: rgba($white, .2);
+	font-size: 7.5rem;
+	text-transform: uppercase;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	transform: rotate(180deg);
+	float: left;
+	line-height: 0.68;
+	padding-left: 3rem;
+}
+
+.heading-one {
+	font-family: $font;
+	font-size: 4rem;
+	color: $white;
+	font-weight: 700;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	padding-bottom: 3rem;
+}
