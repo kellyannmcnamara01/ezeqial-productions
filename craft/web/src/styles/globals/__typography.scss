@@ -43,3 +43,21 @@ p {
 	letter-spacing: 1px;
 	line-height: 1.7;
 }
+
+.page-content a {
+	color: $white;
+	text-decoration: none;
+	background-image: linear-gradient(to right, $orange, rgba($orange, 0.5));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    transition: 0.35s ease all;
+
+    &:hover, &:focus {
+    	background-image: linear-gradient(to right, $orange, $orange);
+    	outline: none;
+    	background-size: 100% 8px;
+    }
+}
+
+
