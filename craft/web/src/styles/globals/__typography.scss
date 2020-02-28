@@ -12,7 +12,7 @@
 	float: left;
 	line-height: 0.68;
 	padding-left: 3rem;
-	padding-bottom: 7rem;
+	// padding-bottom: 7rem;
 }
 
 .heading-one {
@@ -23,6 +23,7 @@
 	letter-spacing: 5px;
 	text-transform: uppercase;
 	padding-bottom: 3rem;
+	line-height: 1.2;
 }
 
 .heading-two {
@@ -32,4 +33,13 @@
 	font-weight: 400;
 	letter-spacing: 2px;
 	line-height: 1.1;
+}
+
+p {
+	font-family: $font;
+	font-size: 1.7rem;
+	color: $white;
+	font-weight: 400;
+	letter-spacing: 1px;
+	line-height: 1.7;
 }
