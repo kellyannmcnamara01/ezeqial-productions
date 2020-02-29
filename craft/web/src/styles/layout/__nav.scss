@@ -32,6 +32,17 @@
 		width: 100%;
 		max-width: 121px;
 	}
+
+	&.home {
+		width: 320px;
+		background: $grey;
+		padding: 0 2rem;
+		transform: translateY(40%);
+
+		img, svg {
+			max-width: 300px;
+		}
+	}
 }
 
 .main-nav__links {
