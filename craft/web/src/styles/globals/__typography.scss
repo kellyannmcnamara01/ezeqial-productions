@@ -42,6 +42,21 @@ p {
 	font-weight: 400;
 	letter-spacing: 1px;
 	line-height: 1.7;
+	margin-bottom: 3rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.heading-four {
+	@extend p;
+	font-weight: 700;	
+	margin-bottom: 0;
+}
+
+strong {
+	font-weight: 700;
 }
 
 .page-content a {
