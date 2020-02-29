@@ -1,5 +1,26 @@
 {% extends "layouts/_layout" %}
 
 {% block content %}
-	<h1>home page</h1>
+	<section id="home" class="wrap-content" style="padding-top: 200px;">
+		<div class="cycle-slideshow"
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-prev="#prev"
+		    data-cycle-next="#next"
+		    data-cycle-slides="> div"
+		    data-cycle-pager=".example-pager"
+		    data-cycle-pager-template="<strong><a href=#> hiii </a></strong><br>"
+		    >
+		    <div><img src="http://malsup.github.io/images/p1.jpg"></div>
+		    <div><img src="http://malsup.github.io/images/p2.jpg"></div>
+		    <div><img src="http://malsup.github.io/images/p3.jpg"></div>
+		    <div><img src="http://malsup.github.io/images/p4.jpg"></div>
+		</div>
+
+		<div class="center">
+		    <a href=# id="prev">Prev</a> 
+		    <a href=# id="next">Next</a>
+		</div>
+		<div class="example-pager"></div>
+	</section>
 {% endblock %}

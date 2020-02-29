@@ -35,6 +35,7 @@ const SRC_STYLES = "craft/web/src/styles/main.scss";
 
 const SRC_SCRIPTS = [
     'craft/web/src/scripts/vendor/jquery.min.js',
+    'craft/web/src/scripts/vendor/jquery.cycle2.js',
     // 'craft/web/src/scripts/vendor/jquery.fancybox.min.js',
     'craft/web/src/scripts/site-scripts.js'
 ];
