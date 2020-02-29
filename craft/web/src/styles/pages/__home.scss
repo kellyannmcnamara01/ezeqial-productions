@@ -17,7 +17,7 @@
 
 .home-slider__title {
 	text-transform: uppercase;
-	font-size: 3rem;
+	// font-size: 3rem;
 	font-weight: 300;
 	padding-right: 2rem;
 }
@@ -53,3 +53,58 @@
 		}
 	}
 }
+
+.home-slider__container {
+	position: relative;
+}
+
+.home-slide {
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+}
+
+.home-slide__title {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	text-align: right;
+
+	>span {
+		text-align: right;
+		line-height: 1.5;
+		font-size: 3rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: inline;
+	    background: $grey;
+	    color: $white; 
+	    padding: 5px 10px;
+	    -webkit-box-decoration-break: clone;
+	    -ms-box-decoration-break: clone;
+	    -o-box-decoration-break: clone;
+	    box-decoration-break: clone;
+	}
+}
+
+.home-slider__controls {
+	padding: 2rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+
+	a {
+		color: $white;
+		font-size: 4rem;
+		text-decoration: none;
+	}
+}
+
+
+
+
