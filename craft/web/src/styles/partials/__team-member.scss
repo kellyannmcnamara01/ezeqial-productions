@@ -1,0 +1,60 @@
+#team-content {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: flex-start;
+
+	.heading-one {
+		width: 100%;
+	}
+}
+
+.team-member {
+	@include column(3.5);
+	padding-bottom: 4rem;
+
+	img {
+		width: 100%;
+		margin-bottom: 3rem;
+		padding: 2px;
+		background-image: linear-gradient(135deg, $white, rgba($white, 0.1));
+	    background-position: 0% 100%;
+	    background-repeat: no-repeat;
+	    background-size: 100% 100%;
+	}
+
+	&.featured {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		.team-member__img {
+			@include column(5.33);
+		}
+
+		.team-member__copy {
+			@include column(6);
+		}
+
+		.team-member__job {
+			font-size: 1.6rem;
+			padding: 0.5rem 0 2.5rem;
+		}
+
+		p {
+			font-weight: 300;
+		}
+	}
+}
+
+.team-member__name {
+	font-weight: 700;
+}
+
+.team-member__job {
+	font-size: 1.4rem;
+	font-weight: 300;
+	padding-top: 1rem;
+	letter-spacing: 1px;
+}

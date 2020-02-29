@@ -60,7 +60,7 @@ strong {
 }
 
 .page-content a {
-	color: $white;
+	color: rgba($white, 0.6);
 	text-decoration: none;
 	background-image: linear-gradient(to right, $orange, rgba($orange, 0.5));
     background-position: 0% 100%;
@@ -69,6 +69,7 @@ strong {
     transition: 0.35s ease all;
 
     &:hover, &:focus {
+    	color: $white;
     	background-image: linear-gradient(to right, $orange, $orange);
     	outline: none;
     	background-size: 100% 8px;
