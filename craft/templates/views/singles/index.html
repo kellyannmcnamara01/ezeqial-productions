@@ -1,56 +1,43 @@
 {% extends "layouts/_layout" %}
 
 {% block content %}
-	<section id="home" class="wrap-content" style="padding-top: 200px;">
-		<div class="home-slider">
+	{% if entry.homePageSlider|length %}
+		<section id="home" class="wrap-content">
+			<div class="home-slider">
 
-			<div class="home-slider__pager-container">
-				<h2 class="heading-two home-slider__title">Presents</h2>
-				<div class="home-slider__pager"></div>
-			</div>
-
-			<div class="home-slider__container">
-				<div class="cycle-slideshow"
-				    data-cycle-fx="scrollHorz"
-				    data-cycle-timeout=5000
-				    data-cycle-timeout="0"
-				    data-cycle-prev="#prev"
-				    data-cycle-next="#next"
-				    data-cycle-slides="> a"
-				    data-cycle-pager=".home-slider__pager"
-				    data-cycle-pager-template="<a href=#><span><span></span></span></a>"
-				    >
-				    <a href="" class="home-slide">
-				    	<img src="http://malsup.github.io/images/p1.jpg">
-				    	<span class="home-slide__title">
-				    		<span>
-				    			Slide Title Placement
-				    		</span>
-				    	</span>
-				    </a>
-				    <a href="" class="home-slide">
-				    	<img src="http://malsup.github.io/images/p2.jpg">
-				    	<span class="home-slide__title">
-				    		<span>
-				    			Slide Title Placement
-				    		</span>
-				    	</span>
-				    </a>
-				    <a href="" class="home-slide">
-				    	<img src="http://malsup.github.io/images/p3.jpg">
-				    	<span class="home-slide__title">
-				    		<span>
-				    			Slide Title Placement
-				    		</span>
-				    	</span>
-				    </a>
+				<div class="home-slider__pager-container">
+					<h2 class="heading-two home-slider__title">Presents</h2>
+					<div class="home-slider__pager"></div>
 				</div>
-				<div class="home-slider__controls">
-				    <a href=# id="prev"><i class="icon-arrow-right"><</i></a> 
-				    <a href=# id="next"><i class="icon-arrow-left">></i></a>
-				</div>
-			</div>
 
-		</div>
-	</section>
+				<div class="home-slider__container">
+					<div class="cycle-slideshow"
+					    data-cycle-fx="fade"
+					    data-cycle-timeout=5000
+					    data-cycle-timeout="0"
+					    data-cycle-prev="#prev"
+					    data-cycle-next="#next"
+					    data-cycle-slides="> a"
+					    data-cycle-pager=".home-slider__pager"
+					    data-cycle-pager-template="<a href=#><span><span></span></span></a>"
+					    >
+					    {% for slide in entry.homePageSlider %}
+					    {% set slideImg = slide.slideImage.one().getUrl('homeSlideImage') %}
+					    <a href="{{ slide.slideLink.getUrl() }}" target="{{ slide.slideLink.getTarget() }}" class="home-slide">
+					    	<img src="{{ slideImg }}">
+					    	<span class="home-slide__title">
+					    		<span>{{ slide.slideTitle }}</span>
+					    	</span>
+					    </a>
+					    {% endfor  %}
+					</div>
+					<div class="home-slider__controls">
+					    <a href=# id="prev"><i class="icon-arrow-right"><</i></a> 
+					    <a href=# id="next"><i class="icon-arrow-left">></i></a>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	{% endif %}
 {% endblock %}

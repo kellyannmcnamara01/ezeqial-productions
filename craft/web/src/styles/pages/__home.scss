@@ -1,7 +1,9 @@
 #home {
 	display: flex;
 	align-items: flex-end;
-	min-height: 100vh;
+	// min-height: calc(100vh - 90px);
+	min-height: 85vh;
+	padding-top: 150px;
 }
 
 .home-slider {
@@ -17,7 +19,7 @@
 
 .home-slider__title {
 	text-transform: uppercase;
-	// font-size: 3rem;
+	font-size: 3rem;
 	font-weight: 300;
 	padding-right: 2rem;
 }
