@@ -1,8 +1,13 @@
 // table of context
 // -- accordion
+// -- production cards height
 
 
 window.addEventListener("load", function(){
+
+
+
+
 
 	// -- accordion
 	$('.accordion__trigger').click(function(){
@@ -25,5 +30,21 @@ window.addEventListener("load", function(){
 		$('html, body').animate({
 			scrollTop: $(this).offset().top - 100
 		}, 1000);
+	});
+
+
+
+
+	// -- production cards height
+	tallestEleHeight = 0;
+	
+	$('.production-card__info').each(function(){
+		var eleHeight = $(this).height();
+
+		if (eleHeight > tallestEleHeight) {
+			tallestEleHeight = eleHeight;
+		}
+
+		$(this).height(tallestEleHeight);
 	});
 });

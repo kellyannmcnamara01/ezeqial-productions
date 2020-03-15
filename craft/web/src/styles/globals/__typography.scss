@@ -13,6 +13,7 @@
 	line-height: 0.68;
 	padding-left: 3rem;
 	padding-bottom: 7rem;
+	white-space: nowrap;
 }
 
 .heading-one {
@@ -59,7 +60,7 @@ strong {
 	font-weight: 700;
 }
 
-.page-content a {
+.page-content a:not(.card-link) {
 	color: rgba($white, 0.6);
 	text-decoration: none;
 	background-image: linear-gradient(to right, $orange, rgba($orange, 0.5));

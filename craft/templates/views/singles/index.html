@@ -6,7 +6,7 @@
 			<div class="home-slider">
 
 				<div class="home-slider__pager-container">
-					<h2 class="heading-two home-slider__title">Presents</h2>
+					{% if entry.outlineHeading|length %}<h2 class="heading-two home-slider__title">{{ entry.outlineHeading }}</h2>{% endif %}
 					<div class="home-slider__pager"></div>
 				</div>
 
