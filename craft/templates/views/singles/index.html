@@ -21,7 +21,7 @@
 					    data-cycle-pager=".home-slider__pager"
 					    data-cycle-pager-template="<a href=#><span><span></span></span></a>"
 					    >
-					    {% for slide in entry.homePageSlider %}
+					    {% for slide in entry.homePageSlider.all() %}
 					    {% set slideImg = slide.slideImage.one().getUrl('homeSlideImage') %}
 					    <a href="{{ slide.slideLink.getUrl() }}" target="{{ slide.slideLink.getTarget() }}" class="home-slide">
 					    	<img src="{{ slideImg }}">

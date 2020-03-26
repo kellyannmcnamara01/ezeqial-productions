@@ -1,8 +1,8 @@
-{% set url = craft.app.request.url %}
+{% set slug = entry.slug %}
 
 <nav class="main-nav">
 	<div class="wrapper">
-		<div class="main-nav__logo {% if url == '/' %}home{% endif %}">
+		<div class="main-nav__logo {% if slug == 'home' %}home{% endif %}">
 			<a href="/">
 				<!-- <img src="images/interface/ezeqial-productions-logo.svg" alt="ezeqial productions logo"> -->
 				{{ svg('images/interface/ezeqial-productions-logo.svg') }}
