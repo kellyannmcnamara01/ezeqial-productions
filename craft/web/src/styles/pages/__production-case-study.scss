@@ -34,10 +34,13 @@
 
 #production-project-content {
 	background: $dark-grey;
-	display: flex;
-	justify-content: space-between;
+	padding: 10rem 0 0 7rem;
 	margin-top: 5rem;
-	padding: 10rem 0;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .production__poster {

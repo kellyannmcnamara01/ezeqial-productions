@@ -2,7 +2,7 @@
 
 		{% include 'layouts/partials/__nav' %}
 
-		<div class="wrapper {{ entry.type|kebab }}">
+		<div class="{{ entry.type|kebab }}">
 			{% block content %}
 			{% endblock %}
 		</div>

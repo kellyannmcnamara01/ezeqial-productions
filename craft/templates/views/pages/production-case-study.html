@@ -3,34 +3,38 @@
 {% block content %}
 	{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
 	
-	<section id="production-project-opening" class="page-content">
-		<div class="production-project-opening__content">
-			{% if entry.preTitle|length %}<span class="production__year">{{ entry.preTitle }}</span>{% endif %}
-			<h1 class="heading-one">{{ entry.title }}</h1>
-			{% if entry.summary|length %}{{ entry.summary }}{% endif %}
-		</div>
-		<div class="production-project-opening__video">
-			<div class="video-container">
-				<iframe src="https://player.vimeo.com/video/{{ entry.vimeoEmbedId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+	<div class="wrapper">
+		<section id="production-project-opening" class="page-content">
+			<div class="production-project-opening__content">
+				{% if entry.preTitle|length %}<span class="production__year">{{ entry.preTitle }}</span>{% endif %}
+				<h1 class="heading-one">{{ entry.title }}</h1>
+				{% if entry.summary|length %}{{ entry.summary }}{% endif %}
 			</div>
-		</div>
-	</section>
+			<div class="production-project-opening__video">
+				<div class="video-container">
+					<iframe src="https://player.vimeo.com/video/{{ entry.vimeoEmbedId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+				</div>
+			</div>
+		</section>
+	</div>
 
 	<section id="production-project-content" class="page-content">
-		<div class="production__poster">
-			<img src="{{ entry.posterPicker.one().getUrl('productionPoster')}}" alt=""/>
-		</div>
-		<div class="production__facts">
-			{% if entry.leftColumn|length %}
-				<div class="production__fact">
-					{{ entry.leftColumn }}
-				</div>
-			{% endif %}
-			{% if entry.rightColumn|length %}
-				<div class="production__fact">
-					{{ entry.rightColumn }}
-				</div>
-			{% endif %}
+		<div class="wrapper">
+			<div class="production__poster">
+				<img src="{{ entry.posterPicker.one().getUrl('productionPoster')}}" alt=""/>
+			</div>
+			<div class="production__facts">
+				{% if entry.leftColumn|length %}
+					<div class="production__fact">
+						{{ entry.leftColumn }}
+					</div>
+				{% endif %}
+				{% if entry.rightColumn|length %}
+					<div class="production__fact">
+						{{ entry.rightColumn }}
+					</div>
+				{% endif %}
+			</div>
 		</div>
 	</section>
 {% endblock %}
