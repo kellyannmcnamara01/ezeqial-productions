@@ -60,21 +60,44 @@ strong {
 	font-weight: 700;
 }
 
-.page-content a:not(.card-link) {
-	color: rgba($white, 0.6);
-	text-decoration: none;
-	background-image: linear-gradient(to right, $orange, rgba($orange, 0.5));
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 2px;
-    transition: 0.35s ease all;
+.page-content {
 
-    &:hover, &:focus {
-    	color: $white;
-    	background-image: linear-gradient(to right, $orange, $orange);
-    	outline: none;
-    	background-size: 100% 8px;
-    }
+	a:not(.card-link) {
+		// color: rgba($white, 0.6);
+		color: $white;
+		text-decoration: none;
+		background-image: linear-gradient(to right, $orange, rgba($orange, 0.5));
+	    background-position: 50% 100%;
+	    background-repeat: no-repeat;
+	    background-size: 100% 2px;
+	    transition: 0.35s ease all;
+
+	    &:hover, &:focus {
+	    	color: $white;
+	    	// color: $orange;
+	    	// background-image: linear-gradient(to right, #000, rgba(#000, 0.5));
+	    	background-image: linear-gradient(to right, $orange, rgba($orange, 0.5));
+	    	outline: none;
+	    	background-size: 100% 100%;
+	    }
+	}
+	
+	li {
+		padding-top: 1.5rem;
+		padding-left: 1rem;
+		position: relative;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 1.5rem;
+			height: 1px;
+			background: linear-gradient(to right, rgba($orange, 0.5), $orange);
+			position: absolute;
+			top: 2.2rem;
+			left: -1rem;
+		}
+	}
 }
 
 

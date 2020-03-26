@@ -1,6 +1,10 @@
 .footer {
 	width: 100%;
 	padding: 10rem 0 3rem;
+
+	&.productionCaseStudies {
+		background: $dark-grey;
+	}
 	
 	.wrapper {
 		display: flex;

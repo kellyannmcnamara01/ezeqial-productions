@@ -37,6 +37,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin-top: 5rem;
+	padding: 10rem 0;
 }
 
 .production__poster {
@@ -49,16 +50,24 @@
 
 .production__facts {
 	@include column(7);
-	column-count: 2;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
 	h2 {
 		font-weight: 700;
+		margin-top: 5rem;
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 }
 
 .production__fact {
-	padding-bottom: 5rem;
-	break-inside: avoid;
+	@include column(5.33);
+	// padding-bottom: 5rem;
+	// break-inside: avoid;
 }
 
 

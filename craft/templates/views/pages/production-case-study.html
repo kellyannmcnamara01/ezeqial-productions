@@ -21,35 +21,16 @@
 			<img src="{{ entry.posterPicker.one().getUrl('productionPoster')}}" alt=""/>
 		</div>
 		<div class="production__facts">
-			<div class="production__fact">
-				<h2>Category Title Placement</h2>
-				<p>Category Content Copy Placement</p>
-			</div>
-
-			<div class="production__fact">
-				<h2>Category Title Placement</h2>
-				<p><a href="">Category Content Copy Placement</a></p>
-				<p><a href="">Category Content Copy Placement</a></p>
-				<p><a href="">Category Content Copy Placement</a></p>
-			</div>
-
-			<div class="production__fact">
-				<h2>Category Title Placement</h2>
-				<p>Category Content Copy Placement</p>
-				<p>Category Content Copy Placement</p>
-				<p>Category Content Copy Placement</p>
-				<p>Category Content Copy Placement</p>
-			</div>
-
-			<div class="production__fact">
-				<h2>Category Title Placement</h2>
-				<p>Category Content Copy Placement</p>
-			</div>
-
-			<div class="production__fact">
-				<h2>Category Title Placement</h2>
-				<p>Category Content Copy Placement</p>
-			</div>
+			{% if entry.leftColumn|length %}
+				<div class="production__fact">
+					{{ entry.leftColumn }}
+				</div>
+			{% endif %}
+			{% if entry.rightColumn|length %}
+				<div class="production__fact">
+					{{ entry.rightColumn }}
+				</div>
+			{% endif %}
 		</div>
 	</section>
 {% endblock %}
