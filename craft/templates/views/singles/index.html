@@ -2,42 +2,44 @@
 
 {% block content %}
 	{% if entry.homePageSlider|length %}
-		<section id="home" class="wrap-content">
-			<div class="home-slider">
+		<div class="wrapper">
+			<section id="home" class="wrap-content">
+				<div class="home-slider">
 
-				<div class="home-slider__pager-container">
-					{% if entry.outlineHeading|length %}<h2 class="heading-two home-slider__title">{{ entry.outlineHeading }}</h2>{% endif %}
-					<div class="home-slider__pager"></div>
-				</div>
-
-				<div class="home-slider__container">
-					<div class="cycle-slideshow"
-					    data-cycle-fx="fade"
-					    data-cycle-timeout=5000
-					    data-cycle-timeout="0"
-					    data-cycle-prev="#prev"
-					    data-cycle-next="#next"
-					    data-cycle-slides="> a"
-					    data-cycle-pager=".home-slider__pager"
-					    data-cycle-pager-template="<a href=#><span><span></span></span></a>"
-					    >
-					    {% for slide in entry.homePageSlider.all() %}
-					    {% set slideImg = slide.slideImage.one().getUrl('homeSlideImage') %}
-					    <a href="{{ slide.slideLink.getUrl() }}" target="{{ slide.slideLink.getTarget() }}" class="home-slide">
-					    	<img src="{{ slideImg }}">
-					    	<span class="home-slide__title">
-					    		<span>{{ slide.slideTitle }}</span>
-					    	</span>
-					    </a>
-					    {% endfor  %}
+					<div class="home-slider__pager-container">
+						{% if entry.outlineHeading|length %}<h2 class="heading-two home-slider__title">{{ entry.outlineHeading }}</h2>{% endif %}
+						<div class="home-slider__pager"></div>
 					</div>
-					<div class="home-slider__controls">
-					    <a href=# id="prev"><i class="icon-arrow-right"><</i></a> 
-					    <a href=# id="next"><i class="icon-arrow-left">></i></a>
-					</div>
-				</div>
 
-			</div>
-		</section>
+					<div class="home-slider__container">
+						<div class="cycle-slideshow"
+						    data-cycle-fx="fade"
+						    data-cycle-timeout=5000
+						    data-cycle-timeout="0"
+						    data-cycle-prev="#prev"
+						    data-cycle-next="#next"
+						    data-cycle-slides="> a"
+						    data-cycle-pager=".home-slider__pager"
+						    data-cycle-pager-template="<a href=#><span><span></span></span></a>"
+						    >
+						    {% for slide in entry.homePageSlider.all() %}
+						    {% set slideImg = slide.slideImage.one().getUrl('homeSlideImage') %}
+						    <a href="{{ slide.slideLink.getUrl() }}" target="{{ slide.slideLink.getTarget() }}" class="home-slide">
+						    	<img src="{{ slideImg }}">
+						    	<span class="home-slide__title">
+						    		<span>{{ slide.slideTitle }}</span>
+						    	</span>
+						    </a>
+						    {% endfor  %}
+						</div>
+						<div class="home-slider__controls">
+						    <a href=# id="prev"><i class="icon-arrow-right"><</i></a> 
+						    <a href=# id="next"><i class="icon-arrow-left">></i></a>
+						</div>
+					</div>
+
+				</div>
+			</section>
+		</div>
 	{% endif %}
 {% endblock %}

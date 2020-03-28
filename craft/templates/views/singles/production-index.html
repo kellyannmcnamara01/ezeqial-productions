@@ -1,25 +1,27 @@
 {% extends "layouts/_layout" %}
 
 {% block content %}
-	{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
-	<section id="production-index-content" class="page-content">
-		<h1 class="heading-one">Production</h1>
+	<div class="wrapper">
+		{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
+		<section id="production-index-content" class="page-content">
+			<h1 class="heading-one">{{ entry.title }}</h1>
 
-		<div class="production-cards">
-			{% for caseStudy in craft.entries.section('productionCaseStudies').orderBy('dateCreated desc').all() %}
-				<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card card-link">
-					<div class="production-card__image">
-						{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
-						<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
-					</div>
-					<div class="production-card__info">
-						<h2 class="heading-two production-card__title">{{ caseStudy.title }}</h2>
-						<span class="production-card__view-flag">
-							<span>View Details</span>
-						</span>
-					</div>
-				</a>
-			{% endfor %}
-		</div>
-	</section>
+			<div class="production-cards">
+				{% for caseStudy in craft.entries.section('productionCaseStudies').orderBy('dateCreated desc').all() %}
+					<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card card-link">
+						<div class="production-card__image">
+							{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
+							<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
+						</div>
+						<div class="production-card__info">
+							<h2 class="heading-two production-card__title">{{ caseStudy.title }}</h2>
+							<span class="production-card__view-flag">
+								<span>View Details</span>
+							</span>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
 {% endblock %}
