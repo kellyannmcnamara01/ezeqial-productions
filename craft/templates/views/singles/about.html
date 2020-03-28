@@ -24,7 +24,7 @@
 
 		{% if entry.teamMembers|length == 1 %}
 			<section id="team-content" class="page-content slim">
-				{% for member in entry.teamMembers %}
+				{% for member in entry.teamMembers.all() %}
 					{% set img = member.teamMemberPhoto.one() %}
 					<div class="team-member featured">
 						<div class="team-member__img">
@@ -45,7 +45,7 @@
 				{% if entry.preTitle|length %}<span class="veritcal-outlined-text">{{ entry.preTitle }}</span>{% endif %}
 				<section id="team-content" class="page-content">
 					{% if entry.heading|length %}<h1 class="heading-one">{{ entry.heading }}</h1>{% endif %}
-					{% for member in entry.teamMembers %}
+					{% for member in entry.teamMembers.all() %}
 						{% set img = member.teamMemberPhoto.one() %}
 						<div class="team-member {% if loop.index == 1 %}featured {% endif %}">
 							<div class="team-member__img">
