@@ -1,3 +1,7 @@
 #development-content {
 	width: 100%;
+
+	@include phone-large-below {
+		padding-right: 4rem;
+	}
 }
