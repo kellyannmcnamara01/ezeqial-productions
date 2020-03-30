@@ -1,0 +1,16 @@
+{% extends "layouts/_layout" %}
+
+{% block content %}
+	<div class="wrapper">
+		<section id="contact" class="wrap-content">
+			<span class="veritcal-outlined-text">Thank You</span>
+			
+			<section id="contact-content" class="page-content">
+				<h1 class="heading-one">Thank You</h1>
+				<p><p>Thanks for sending that in, {{ craft.app.request.getQueryParam('from') }}!</p></p>
+				<p>words. <a href="#">link.</a></p>
+			</section>
+		</section>
+	</div>
+
+{% endblock %}
