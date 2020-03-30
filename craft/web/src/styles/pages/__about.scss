@@ -11,9 +11,18 @@
 			font-size: 2.2rem;
 			font-weight: 300;
 		}
+
+		@include tablet-below {
+			@include column(12);
+			margin-bottom: 3rem;
+		}
 	}
 
 	>div:last-child {
 		@include column(6);
+
+		@include tablet-below {
+			@include column(12);
+		}
 	}
 }

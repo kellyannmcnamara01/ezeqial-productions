@@ -17,6 +17,16 @@
 	@include column(3.5);
 	padding-bottom: 4rem;
 
+	@include tablet-below {
+		@include column(6);
+		padding-right: 5.5%;
+	}
+
+	@include phone-large-below {
+		@include column(12);
+		padding-right: 0;
+	}
+
 	img {
 		width: 100%;
 		margin-bottom: 3rem;
@@ -25,6 +35,10 @@
 	    background-position: 0% 100%;
 	    background-repeat: no-repeat;
 	    background-size: 100% 100%;
+
+	    @include phone-large-below {
+	    	max-width: 400px;
+	    }
 	}
 
 	&.featured {
@@ -32,13 +46,24 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
+		flex-wrap: wrap;
+		padding-right: 0;
 
 		.team-member__img {
 			@include column(5.33);
+
+			@include tablet-small-below {
+				@include column(12);
+				max-width: 400px;
+			}
 		}
 
 		.team-member__copy {
 			@include column(6);
+
+			@include tablet-small-below {
+				@include column(12);
+			}
 		}
 
 		.team-member__job {
@@ -61,4 +86,5 @@
 	font-weight: 300;
 	padding-top: 1rem;
 	letter-spacing: 1px;
+	line-height: 1.2;
 }
