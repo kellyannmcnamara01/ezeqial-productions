@@ -1,0 +1,22 @@
+#contact {
+	.page-content {
+		width: 100%;
+	}
+
+	.contact {
+		width: 100%;
+		display: flex;
+	}
+}
+
+.contact__form {
+	@include column(8);
+}
+
+.contact__sidebar {
+	@include column(4);
+
+	.heading-two, h2 {
+		font-weight: bold;
+	}
+}
