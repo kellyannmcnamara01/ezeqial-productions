@@ -6,11 +6,16 @@
 	.contact {
 		width: 100%;
 		display: flex;
+		flex-wrap: wrap;
 	}
 }
 
 .contact__form {
 	@include column(8);
+
+	@include tablet-large-below {
+		@include column(12);
+	}
 }
 
 .contact__sidebar {
@@ -18,5 +23,9 @@
 
 	.heading-two, h2 {
 		font-weight: bold;
+	}
+
+	@include tablet-large-below {
+		@include column(12);
 	}
 }

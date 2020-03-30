@@ -9,6 +9,10 @@ form {
 
 		&.half {
 			@include column(6);
+
+			@include phone-large-below {
+				@include column(12);
+			}
 		}
 	}
 
