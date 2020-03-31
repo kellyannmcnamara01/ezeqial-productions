@@ -6,6 +6,7 @@
 
 .production-card {
 	@include column(2.75);
+	margin-bottom: 3rem;
 	display: flex;
 	flex-wrap: wrap;
 	text-decoration: none;
@@ -38,6 +39,35 @@
 
 		.production-card__view-flag {
 			left: 0;
+		}
+	}
+
+	@include desktop-small-below {
+		@include column(3.75);
+	}
+
+	@include tablet-large-below {
+		@include column(5.75);
+	}
+
+	@include phone-large-below {
+		@include column(12);
+		max-width: 350px;
+
+		.production-card__info {
+			margin: 0;
+		}
+
+		&:nth-child(even) {
+			.production-card__image {
+				order: 1;
+			}
+			.production-card__info {
+				order: 2;
+				margin: 0;
+				border-top: solid 2px $orange;
+				border-bottom: none;
+			}
 		}
 	}
 }
