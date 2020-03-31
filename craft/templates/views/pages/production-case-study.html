@@ -1,9 +1,10 @@
 {% extends "layouts/_layout" %}
 
 {% block content %}
-	{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
-	
-	<div class="wrapper">
+<div class="wrapper">
+	<div class="wrap-content">
+		{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
+		
 		<section id="production-project-opening" class="page-content">
 			<div class="production-project-opening__content">
 				{% if entry.preTitle|length %}<span class="production__year">{{ entry.preTitle }}</span>{% endif %}
@@ -17,6 +18,7 @@
 			</div>
 		</section>
 	</div>
+</div>
 
 	<section id="production-project-content" class="page-content">
 		<div class="wrapper">
