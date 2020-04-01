@@ -1,4 +1,5 @@
 {% set slug = entry.slug %}
+{% set currentUrl = url(craft.app.request.pathInfo) %}
 
 <nav class="main-nav">
 	<div class="wrapper">
@@ -8,12 +9,28 @@
 				{{ svg('images/interface/ezeqial-productions-logo.svg') }}
 			</a>
 		</div>
-		<ul class="main-nav__links">
+		{% if mainNavigation.navigationLink | length %}
+			<ul class="main-nav__links">
+				{% for link in mainNavigation.navigationLink %}
+					{% set pageLink = '/' ~ link.linkInformation.text|lower %}
+					{% set activeLink = '' %}
+
+					{% if pageLink in currentUrl or (slug == 'home' and pageLink == '/home') %}
+						{% set activeLink = 'active' %}
+					{% endif %}
+
+					<li class="main-nav__link">
+						<a href="{{ link.linkInformation.url }}" aria-label="Navigate to {{ link.linkInformation.text }}" class="{{ activeLink }}">{{ link.linkInformation.text }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		<!-- <ul class="main-nav__links">
 			<li class="main-nav__link"><a href="/" aria-label="Navigate to the Home Page">home</a></li>
 			<li class="main-nav__link"><a href="/production" aria-label="Navigate to the Production Page">production</a></li>
 			<li class="main-nav__link"><a href="/development" aria-label="Navigate to the Development Page">development</a></li>
 			<li class="main-nav__link"><a href="/about" aria-label="Navigate to the About Page">about</a></li>
 			<li class="main-nav__link"><a href="/contact" aria-label="Navigate to the Contact Page">contact</a></li>
-		</ul>
+		</ul> -->
 	</div>
 </nav>

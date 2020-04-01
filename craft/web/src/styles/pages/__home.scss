@@ -1,9 +1,10 @@
 #home {
-	display: flex;
-	align-items: flex-end;
+	// display: flex;
+	// align-items: flex-end;
 	// min-height: calc(100vh - 90px);
-	min-height: 85vh;
-	padding-top: 150px;
+	// min-height: 85vh;
+	padding-top: 125px;
+	// margin-bottom: -6rem;
 }
 
 .home-slider {
@@ -19,7 +20,7 @@
 
 .home-slider__title {
 	text-transform: uppercase;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-weight: 300;
 	padding-right: 2rem;
 }

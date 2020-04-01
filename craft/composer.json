@@ -1,7 +1,7 @@
 {
   "require": {
     "anubarak/craft-relabel": "1.3.4",
-    "craftcms/cms": "3.4.11",
+    "craftcms/cms": "3.4.12",
     "craftcms/contact-form": "2.2.6",
     "craftcms/redactor": "2.6.1",
     "ether/seo": "3.6.3",

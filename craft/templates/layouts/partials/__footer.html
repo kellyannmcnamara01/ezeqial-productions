@@ -1,4 +1,6 @@
-<footer class="footer {{ entry.type }}">
+{% set slug = entry.slug %}
+
+<footer class="footer {{ entry.type }} {% if slug == 'home' %}home{% endif %}">
 	<div class="wrapper">
 		<nav class="footer-nav">
 			<ul class="footer-nav__links">
