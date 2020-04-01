@@ -6,10 +6,47 @@
 window.addEventListener("load", function(){
 
 
+	//  ===== Scroll Throttle =====
+	// * create and empty var
+	var scrollThrottle;
+
+	// * on scroll of window execute code
+	$(window).bind('scroll',function(){
+
+		// * check if scrollThrottle is null, if it is execute function and reset to null. do this every 75ms;
+		// * throttling will help with the CPU and load time of a website.
+		if (!scrollThrottle) {
+			scrollThrottle = setTimeout(function(){
+				// * call on page scroll function
+				onPageScroll();
+				scrollThrottle = null;
+			},75);
+		}
+	});
+	//  ===== [END] Scroll Throttle =====
 
 
 
-	// -- accordion
+
+
+	//  ===== On Page Scroll =====
+	function onPageScroll(){
+		// main nav banner fixed
+		if ($(window).scrollTop() >= 25) {
+		    $('.js--main-nav').addClass('is-scrolled');
+		} else {
+		    $('.js--main-nav').removeClass('is-scrolled');
+		}
+	}
+
+	onPageScroll();
+	//  ===== [END] On Page Scroll =====
+
+
+
+
+
+	//  ===== Accordion =====
 	$('.accordion__trigger').click(function(){
 		// grabbing accordion controls and id + the accordion's panel
 		var ariaControls = $(this).attr('aria-controls'),
@@ -31,11 +68,14 @@ window.addEventListener("load", function(){
 			scrollTop: $(this).offset().top - 100
 		}, 1000);
 	});
+	//  ===== [END] Accordion =====
 
 
 
 
-	// -- production cards height
+
+
+	//  ===== Production Cards Height =====
 	tallestEleHeight = 0;
 	
 	$('.production-card__info').each(function(){
@@ -47,4 +87,6 @@ window.addEventListener("load", function(){
 
 		$(this).height(tallestEleHeight);
 	});
+	//  ===== [END] Production Cards Height =====
+
 });
