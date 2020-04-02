@@ -1,8 +1,3 @@
-// table of context
-// -- accordion
-// -- production cards height
-
-
 window.addEventListener("load", function(){
 
 
@@ -53,20 +48,26 @@ window.addEventListener("load", function(){
 			accordionId = $(this).attr('id'),
 			accordionPanel = $('.accordion-panel[id="' + ariaControls + '"]');
 
-		// setting all accordions to expanded false expect the one clicked
-		$('.accordion__trigger').attr('aria-expanded', false);
-		$(this).attr('aria-expanded', true);
-
-		// setting all panels to hidden true expect the one clicked
-		$('.accordion-panel').attr('hidden', true);
-		accordionPanel.attr('hidden', false);
-
 		// change url to include selected hash
 		window.location.hash = ariaControls;
 
 		$('html, body').animate({
-			scrollTop: $(this).offset().top - 100
+			scrollTop: $(this).offset().top - 200
 		}, 1000);
+
+		if ($(this).attr('aria-expanded') == 'false') {
+			// setting all accordions to expanded false expect the one clicked
+			$('.accordion__trigger').attr('aria-expanded', false);
+			$(this).attr('aria-expanded', true);
+
+			// setting all panels to hidden true expect the one clicked
+			$('.accordion-panel').attr('hidden', true);
+			accordionPanel.attr('hidden', false);
+
+		} else {
+			$(this).attr('aria-expanded', false);
+			accordionPanel.attr('hidden', true);
+		}
 	});
 	//  ===== [END] Accordion =====
 
