@@ -47,15 +47,7 @@ window.addEventListener("load", function(){
 		var ariaControls = $(this).attr('aria-controls'),
 			accordionId = $(this).attr('id'),
 			accordionPanel = $('.accordion-panel[id="' + ariaControls + '"]');
-
-		// setting all accordions to expanded false expect the one clicked
-		// $('.accordion__trigger').attr('aria-expanded', false);
-		// $(this).attr('aria-expanded', true);
-		
-		// setting all panels to hidden true expect the one clicked
-		// $('.accordion-panel').slideUp();
-		// accordionPanel.slideDown();
-
+			
 		// change url to include selected hash
 		window.location.hash = ariaControls;
 
@@ -73,12 +65,6 @@ window.addEventListener("load", function(){
 			accordionPanel.attr('aria-expanded', 'false');
 			accordionPanel.slideUp();
 		}
-
-		// setTimeout(function(){
-		// 	$('html, body').animate({
-		// 		scrollTop: $(this).offset().top - 100
-		// 	}, 1000);
-		// }, 500);
 
 	});
 	//  ===== [END] Accordion =====
