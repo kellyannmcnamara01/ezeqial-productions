@@ -23,6 +23,7 @@
 
 	.heading-two, h2 {
 		font-weight: bold;
+		padding-bottom: 2rem;
 	}
 
 	@include tablet-large-below {
