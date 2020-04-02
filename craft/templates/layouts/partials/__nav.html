@@ -9,7 +9,7 @@
 			</a>
 		</div>
 		{% if mainNavigation.navigationLink | length %}
-			<ul class="main-nav__links">
+			<ul class="main-nav__links desktop">
 				{% for link in mainNavigation.navigationLink %}
 					{% set pageLink = '/' ~ link.linkInformation.text|lower %}
 					{% set activeLink = '' %}
@@ -24,5 +24,25 @@
 				{% endfor %}
 			</ul>
 		{% endif %}
+		<button class="hamham" aria-expanded="false" aira-label="mobile menu"><span></span><span></span><span></span></button>
 	</div>
 </nav>
+
+<div class="mobile-nav">
+	{% if mainNavigation.navigationLink | length %}
+		<ul class="main-nav__links">
+			{% for link in mainNavigation.navigationLink %}
+				{% set pageLink = '/' ~ link.linkInformation.text|lower %}
+				{% set activeLink = '' %}
+
+				{% if pageLink in currentUrl or (slug == 'home' and pageLink == '/home') %}
+					{% set activeLink = 'active' %}
+				{% endif %}
+
+				<li class="main-nav__link">
+					<a href="{{ link.linkInformation.url }}" aria-label="Navigate to {{ link.linkInformation.text }}" class="{{ activeLink }}">{{ link.linkInformation.text }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</div>

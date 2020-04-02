@@ -89,4 +89,32 @@ window.addEventListener("load", function(){
 	});
 	//  ===== [END] Production Cards Height =====
 
+
+
+
+
+
+	//  ===== Mobile Nav =====
+	$('.hamham').click(function(){
+		var ariaExpanded = $(this).attr('aria-expanded');
+		console.log(ariaExpanded);
+
+		if( ariaExpanded == 'true' ) {
+			$(this).attr("aria-expanded","false");
+			$('.mobile-nav').slideUp();
+		} else {
+			$(this).attr("aria-expanded","true");
+			$('.mobile-nav').slideDown();
+		}
+	});
+	//  ===== [END] Mobile Nav =====
+
 });
+
+
+
+
+
+
+
+

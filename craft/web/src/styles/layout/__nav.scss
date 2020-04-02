@@ -2,16 +2,13 @@
 	border-bottom: solid 1px rgba($orange, 0.5);
 	width: 100%;
 	transition: 0.35s ease all;
-	// max-height: 81.19px;
 
 	&.is-scrolled {
-		background: rgba($dark-grey, 0.9);
+		background: rgba($dark-grey, 0.95);
 		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 999;
-
-
 	}
 
 	.wrapper {
@@ -23,7 +20,6 @@
 
 .main-nav__logo {
 	width: 121px;
-	margin-right: 10rem;
 
 	.ep-logo {
 		fill: $white;
@@ -57,12 +53,22 @@
 		// 	max-width: 300px;
 		// }
 	}
+
+	@include tablet-below {
+		padding: 2rem 0;
+	}
 }
 
 .main-nav__links {
 	display: flex;
 	justify-content: space-between;
 	margin-right: -3.5rem;
+
+	&.desktop {
+		@include tablet-below {
+			display: none;
+		}
+	}
 
 	a {
 		font-size: 1.4rem;
@@ -104,4 +110,162 @@
 			}
 		}
 	}
+
+	@include desktop-below {
+		margin-right: -4rem;
+
+		a {
+			padding: 4.5rem 4rem;
+
+			.is-scrolled & {
+				padding: 3.5rem 4rem;
+			}
+		}
+	}
+
+	@include tablet-large-below {
+		margin-right: -3rem;
+
+		a {
+			padding: 4.5rem 3rem;
+
+			.is-scrolled & {
+				padding: 3.5rem 3rem;
+			}
+		}
+	}
 }
+
+.hamham {
+	width: 5rem;
+	height: 3rem;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	position: relative;
+	transition: 0.35s ease all;
+
+	span {
+		width: 100%;
+		height: 3px;
+		background-image: linear-gradient(to right, $orange, rgba($orange, 0.5));
+		position: absolute;
+		transition: 0.5s ease all;
+
+		&:first-child {
+			top: 0;
+			left: 40%;
+			transform: translateX(-50%);
+		}
+
+		&:nth-child(2) {
+			top: 50%;
+			left: 60%;
+			transform: translate(-50%, -50%);
+		}
+
+		&:last-child {
+			bottom: 0;
+			left: 40%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&:hover, &:focus {
+		outline: none;
+
+		span {
+			background-color: $orange;
+			width: 75%;
+
+			&:before, &:after {
+				background-color: $orange;
+			}
+		}
+	}
+
+	&[aria-expanded="true"] {
+
+		span {
+			width: 75%; 
+			// background: $orange;
+
+			&:first-child {
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				left: 50%;
+				width: 0;
+				opacity: 0;
+			}
+
+			&:last-child {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+		}
+	}
+}
+
+.mobile-nav {
+	display: none;
+	background: rgba($grey, 0.95);
+	position: fixed;
+	top: 77px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	z-index: 998;
+	padding-top: 3rem;
+
+	.main-nav__links {
+		display: block;
+
+		a {
+			margin: 2rem 3rem;
+			padding: 0 0 1rem;
+			display: inline-block;
+			// position: relative;
+			// padding: 3rem;
+			// margin-bottom: 1rem;
+
+			// &::after {
+			// 	height: 0;
+			// 	width: 3px;
+			// 	left: 2rem;
+			// 	top: 50%;
+			// 	transform: translate(0, -50%);
+			// }
+
+			// &:hover, &:focus, &.active {
+			// 	&::after {
+			// 		height: 100%;
+			// 	}
+			// }
+		}
+	}
+
+	@include tablet-below {
+		// display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
