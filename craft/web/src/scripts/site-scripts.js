@@ -101,10 +101,10 @@ window.addEventListener("load", function(){
 
 		if( ariaExpanded == 'true' ) {
 			$(this).attr("aria-expanded","false");
-			$('.mobile-nav').slideUp();
+			$('.mobile-nav').fadeOut();
 		} else {
 			$(this).attr("aria-expanded","true");
-			$('.mobile-nav').slideDown();
+			$('.mobile-nav').fadeIn();
 		}
 	});
 	//  ===== [END] Mobile Nav =====
