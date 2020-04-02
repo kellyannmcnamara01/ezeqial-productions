@@ -21,24 +21,26 @@
 									</span>
 									<span class="accordion__btn-icon"></span>
 								</button>
-								<div id="{{ accordionLabel }}" role="region" aria-labelledby="{{ accordionLabel }}-{{loop.index}}" class="accordion-panel" hidden="true">
+								<div id="{{ accordionLabel }}" role="region" aria-labelledby="{{ accordionLabel }}-{{loop.index}}" aria-expanded="false" class="accordion-panel" hidden="true">
 									<div>
-										{% if accordion.accordionPoster|length %}
-											{% set img = accordion.accordionPoster.one() %}
-											<div class="accordion-panel__visual">
-												<img src="{{ img.getUrl('developmentProjectVisuals') }}" {% if img.altTag|length %}alt="{% set imgAlt = img.altTag %}"{% endif %}/>
-											</div>
-										{% endif %}
-										{% if accordion.accordionLeftColumn|length %}
-											<div class="accordion-panel__details">
-												{{ accordion.accordionLeftColumn }}
-											</div>
-										{% endif %}
-										{% if accordion.accordionRightColumn|length %}
-											<div class="accordion-panel__synopsis">
-												{{ accordion.accordionLeftColumn }}
-											</div>
-										{% endif %}
+										<div>
+											{% if accordion.accordionPoster|length %}
+												{% set img = accordion.accordionPoster.one() %}
+												<div class="accordion-panel__visual">
+													<img src="{{ img.getUrl('developmentProjectVisuals') }}" {% if img.altTag|length %}alt="{% set imgAlt = img.altTag %}"{% endif %}/>
+												</div>
+											{% endif %}
+											{% if accordion.accordionLeftColumn|length %}
+												<div class="accordion-panel__details">
+													{{ accordion.accordionLeftColumn }}
+												</div>
+											{% endif %}
+											{% if accordion.accordionRightColumn|length %}
+												<div class="accordion-panel__synopsis">
+													{{ accordion.accordionLeftColumn }}
+												</div>
+											{% endif %}
+										</div>
 									</div>
 								</div>
 							</div>

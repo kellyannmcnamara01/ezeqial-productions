@@ -63,9 +63,14 @@
 	padding-bottom: 3.5rem;
 
 	>div {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		overflow: hidden;
+		transition: 0.35s ease all;
+
+		>div {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
 	}
 }
 
