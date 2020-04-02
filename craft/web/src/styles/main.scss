@@ -29,6 +29,7 @@ body {
     color: $white;
     font-size: 1.6rem;
     font-feature-settings: "liga" 0;
+    padding-top: 7.6rem;
 
     @include phone-large-below {
         font-size: 2rem;
