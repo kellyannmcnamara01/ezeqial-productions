@@ -45,6 +45,10 @@ body {
     @include desktop-small-below {
         padding: 0 4rem;
     }
+
+    @include phone {
+        padding: 0 2rem;
+    }
 }
 
 .page-content {
