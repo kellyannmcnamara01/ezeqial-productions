@@ -25,6 +25,23 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		@include tablet-large-below {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+.footer-nav {
+	@include tablet-large-below {
+		width: 100%;
+		margin-bottom: 4rem;
+	}
+}
+
+.footer-social {
+	@include tablet-large-below {
+		width: 100%;
 	}
 }
 
@@ -47,9 +64,14 @@
 			color: $white;
 		}
 	}
+
+	@include tablet-large-below {
+		flex-wrap: wrap;
+	}
 }
 
 .footer-nav__link {
+
 	a {
 		margin-right: 4rem;
 	}
@@ -78,6 +100,10 @@
 			.new-window-alert {
 				opacity: 1;
 			}
+		}
+
+		@include tablet-large-below {
+			margin: 0 4rem 2rem 0;
 		}
 	}
 
