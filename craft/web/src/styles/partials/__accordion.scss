@@ -12,6 +12,8 @@
 	padding: 2.5rem 0;
 	transition: 0.5s ease all;
 	transition-delay: 0.1s;
+	display: flex;
+	justify-content: space-between;
 
 	&::after {
 		content: '';
@@ -37,12 +39,32 @@
 		.accordion__title {
 			color: $orange;
 		}
+
+		.accordion__btn-icon {
+			transform: translateY(1rem);
+		}
 	}
 
 	&[aria-expanded="true"] {
 		&::after {
 			width: 100%;
 			background: $white;
+		}
+
+		.accordion__btn-icon {
+			&::before {
+				transform: translate(-80%, -50%) rotate(-50deg);
+			}
+
+			&::after {
+				transform: translate(-20%, -50%) rotate(50deg);
+			}
+		}
+
+		&:hover, &:focus {
+			.accordion__btn-icon {
+				transform: translateY(-1rem);
+			}
 		}
 	}
 }
@@ -125,6 +147,34 @@
 		&:first-child {
 			margin-top: 0;
 		}
+	}
+}
+
+.accordion__btn-icon {
+	display: block;
+	width: 4rem;
+	height: 3rem;
+	margin-left: 2rem;
+	position: relative;
+	transition: 0.35s ease all;
+
+	&::before, &::after {
+		content: '';
+		width: 50%;
+		height: 2px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background: $orange;
+		transition: 0.35s ease all;
+	}
+
+	&::before {
+		transform: translate(-80%, -50%) rotate(50deg);
+	}
+
+	&::after {
+		transform: translate(-20%, -50%) rotate(-50deg);
 	}
 }
 
