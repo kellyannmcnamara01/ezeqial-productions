@@ -15,8 +15,18 @@
 	padding-bottom: 7rem;
 	white-space: nowrap;
 
+	.development-index & {
+		@include phone-large-below {
+			display: none;
+		}
+	}
+
+	@include phone-large-below {
+		font-size: 6.5rem;
+		padding-left: 2rem;
+	}
+
 	@include phone {
-		background: green;
 		display: none;
 	}
 }
