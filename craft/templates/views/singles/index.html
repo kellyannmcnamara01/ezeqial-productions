@@ -25,7 +25,7 @@
 						    {% for slide in entry.homePageSlider.all() %}
 						    {% set slideImg = slide.slideImage.one().getUrl('homeSlideImage') %}
 						    <a href="{{ slide.slideLink.getUrl() }}" target="{{ slide.slideLink.getTarget() }}" class="home-slide">
-						    	<img src="{{ slideImg }}">
+						    	<img src="{{ slideImg }}" {% if slide.slideImage.one().altTag|length %}alt="{{ slide.slideImage.one() }}"{% endif %}>
 						    	<span class="home-slide__title">
 						    		<span>{{ slide.slideTitle }}</span>
 						    	</span>

@@ -11,7 +11,7 @@
 					<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card card-link">
 						<div class="production-card__image">
 							{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
-							<img src="{{ poster }}" alt="{{ caseStudy.posterPicker.one().altTag }}"/>
+							<img src="{{ poster }}" {% if caseStudy.posterPicker.one().altTag|length %} alt="{{ caseStudy.posterPicker.one().altTag }}" {% endif %}/>
 						</div>
 						<div class="production-card__info">
 							<h2 class="heading-two production-card__title">{{ caseStudy.title }}</h2>

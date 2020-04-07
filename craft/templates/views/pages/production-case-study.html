@@ -23,7 +23,8 @@
 	<section id="production-project-content" class="page-content">
 		<div class="wrapper">
 			<div class="production__poster">
-				<img src="{{ entry.posterPicker.one().getUrl('productionPoster')}}" alt=""/>
+				<img src="{{ entry.posterPicker.one().getUrl('productionPoster')}}" {% if entry.posterPicker.one().altTag
+				length %} alt="{{ entry.posterPicker.one().altTag }}" {% endif %}/>
 			</div>
 			<div class="production__facts">
 				{% if entry.leftColumn|length %}
