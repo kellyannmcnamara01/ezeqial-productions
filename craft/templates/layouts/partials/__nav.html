@@ -10,7 +10,7 @@
 		</div>
 		{% if mainNavigation.navigationLink | length %}
 			<ul class="main-nav__links desktop">
-				{% for link in mainNavigation.navigationLink %}
+				{% for link in mainNavigation.navigationLink.all() %}
 					{% set pageLink = '/' ~ link.linkInformation.text|lower %}
 					{% set activeLink = '' %}
 
@@ -31,7 +31,7 @@
 <div class="mobile-nav">
 	{% if mainNavigation.navigationLink | length %}
 		<ul class="main-nav__links">
-			{% for link in mainNavigation.navigationLink %}
+			{% for link in mainNavigation.navigationLink.all() %}
 				{% set pageLink = '/' ~ link.linkInformation.text|lower %}
 				{% set activeLink = '' %}
 

@@ -48,7 +48,7 @@
 
 		&:hover, &:focus {
 			outline: none;
-			color: $orange;
+			color: $white;
 		}
 	}
 }
@@ -60,10 +60,24 @@
 }
 
 .footer-social__link {
+	display: flex;
+	align-items: center;
+
 	a {
 		margin-left: 4rem;
+		font-size: 14px;
+
+		i.icon-youtube {
+			font-size: 19px;
+		}
+
+		i.icon-twitter {
+			font-size: 16px;
+		}
 
 		&:hover, &:focus {
+
+			color: $white;
 
 			.new-window-alert {
 				opacity: 1;
