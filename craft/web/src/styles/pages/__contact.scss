@@ -22,6 +22,7 @@
 	@include column(4);
 
 	.heading-two, h2 {
+		@extend .heading-two;
 		font-weight: bold;
 		padding-bottom: 2rem;
 	}
