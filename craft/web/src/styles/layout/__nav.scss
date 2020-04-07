@@ -5,7 +5,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 999;
+	z-index: 1001;
 
 	&.is-scrolled {
 		background: rgba($dark-grey, 0.95);
@@ -230,7 +230,7 @@
 	width: 100%;
 	height: 100%;
 	overflow-y: scroll;
-	z-index: 998;
+	z-index: 1000;
 	padding-top: 3rem;
 
 	.main-nav__links {
