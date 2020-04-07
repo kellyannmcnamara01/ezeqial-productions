@@ -1,24 +1,24 @@
 {% extends "layouts/_layout" %}
 
 {% block content %}
-<div class="wrapper">
-	<div class="wrap-content">
-		{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
-		
-		<section id="production-project-opening" class="page-content">
-			<div class="production-project-opening__content">
-				{% if entry.preTitle|length %}<span class="production__year">{{ entry.preTitle }}</span>{% endif %}
-				<h1 class="heading-one">{{ entry.title }}</h1>
-				{% if entry.summary|length %}{{ entry.summary }}{% endif %}
-			</div>
-			<div class="production-project-opening__video">
-				<div class="video-container">
-					<iframe src="https://player.vimeo.com/video/{{ entry.vimeoEmbedId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+	<div class="wrapper">
+		<div class="wrap-content">
+			{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
+			
+			<section id="production-project-opening" class="page-content">
+				<div class="production-project-opening__content">
+					{% if entry.preTitle|length %}<span class="production__year">{{ entry.preTitle }}</span>{% endif %}
+					<h1 class="heading-one">{{ entry.title }}</h1>
+					{% if entry.summary|length %}{{ entry.summary }}{% endif %}
 				</div>
-			</div>
-		</section>
+				<div class="production-project-opening__video">
+					<div class="video-container">
+						<iframe src="https://player.vimeo.com/video/{{ entry.vimeoEmbedId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+					</div>
+				</div>
+			</section>
+		</div>
 	</div>
-</div>
 
 	<section id="production-project-content" class="page-content">
 		<div class="wrapper">
@@ -39,4 +39,34 @@
 			</div>
 		</div>
 	</section>
+
+
+	{# Set parameters for prev/next elements list #}
+	{% set params = craft.entries.section('productionCaseStudies') %}
+
+	{# Get the prev/next elements #}
+	{% set prevEntry = entry.getPrev(params) %}
+	{% set nextEntry = entry.getNext(params) %}
+
+	<section class="production-navigation">
+		<div class="wrapper">
+			<div>
+				{% if prevEntry|length %}
+					<a href="{{ prevEntry.url }}" class="production-navigation__link prev">
+						<span><i class="icon-arrow-left"></i> Previous</span>
+						{{ prevEntry.title }}
+					</a>
+				{% endif %}
+			</div>
+			<div>
+				{% if nextEntry|length %}
+				<a href="{{ nextEntry.url }}" class="production-navigation__link next">
+					<span>Next <i class="icon-arrow-right"></i> </span>
+					{{ nextEntry.title }}
+				</a>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+
 {% endblock %}

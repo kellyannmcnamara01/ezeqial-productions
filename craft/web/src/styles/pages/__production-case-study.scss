@@ -163,4 +163,110 @@
 }
 
 
+.production-navigation {
+	background: $dark-grey;
+	padding-top: 3rem;
+	// position: relative;
+
+	// &::before {
+	// 	content: '';
+	// 	display: block;
+	// 	width: 100%;
+	// 	height: 100px; 
+	// 	background: linear-gradient(to right, $orange, rgba($orange, 0.5));
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// }
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 4rem;
+		flex-wrap: wrap;
+
+		>div {
+			// width: 49%;
+
+			@include phone-large-below {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+.production-navigation__link {
+	padding: 3rem;
+	display: block;
+	text-decoration: none;
+	font-size: 2rem;
+	color: $white;
+	height: 100%;
+	overflow: hidden;
+    transition: all .35s ease;
+    position: relative;
+    z-index: 2;
+
+	&.next {
+		text-align: right;
+	}
+
+	&.prev {
+	}
+
+	span {
+		display: block;
+		@extend p;
+		font-size: 1.5rem;
+		font-weight: 600;
+		transition: 0.35s ease all;
+	}
+
+	&:hover, &:focus {
+		outline: none;
+		color: $orange;
+
+		span {
+			color: $orange;
+		}
+	}
+
+	@include phone-large-below {
+		&.next, &.prev {
+			text-align: center;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
