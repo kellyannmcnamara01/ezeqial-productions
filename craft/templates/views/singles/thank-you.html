@@ -3,12 +3,13 @@
 {% block content %}
 	<div class="wrapper">
 		<section id="contact" class="wrap-content">
-			<span class="veritcal-outlined-text">Thank You</span>
+			{% if entry.outlineHeading|length %}<span class="veritcal-outlined-text">{{ entry.outlineHeading }}</span>{% endif %}
 			
 			<section id="contact-content" class="page-content">
-				<h1 class="heading-one">Thank You</h1>
-				<p><p>Thanks for sending that in, {{ craft.app.request.getQueryParam('from') }}!</p></p>
-				<p>words. <a href="#">link.</a></p>
+				<h1 class="heading-one">{{ entry.title }}</h1>
+				{% if entry.summary|length %}
+					{{ entry.summary }}
+				{% endif %}
 			</section>
 		</section>
 	</div>
