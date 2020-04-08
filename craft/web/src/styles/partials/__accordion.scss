@@ -134,6 +134,7 @@
 
 	@include tablet-small-below {
 		@include column(12);
+		margin-top: 3rem;
 	}
 }
 
