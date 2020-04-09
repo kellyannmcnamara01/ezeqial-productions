@@ -35,11 +35,9 @@
 													{{ accordion.accordionLeftColumn }}
 												</div>
 											{% endif %}
-											{% if accordion.accordionRightColumn|length %}
-												<div class="accordion-panel__synopsis">
-													{{ accordion.accordionLeftColumn }}
-												</div>
-											{% endif %}
+											<div class="accordion-panel__synopsis">
+												{% if accordion.accordionRightColumn|length %} {{ accordion.accordionRightColumn }} {% endif %}
+											</div>
 										</div>
 									</div>
 								</div>
