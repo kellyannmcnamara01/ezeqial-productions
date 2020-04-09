@@ -42,11 +42,26 @@
 
 
 	{# Set parameters for prev/next elements list #}
-	{% set params = craft.entries.section('productionCaseStudies') %}
+	{% set videoList = craft.entries.section('productionCaseStudies') %}
 
 	{# Get the prev/next elements #}
-	{% set prevEntry = entry.getPrev(params) %}
-	{% set nextEntry = entry.getNext(params) %}
+	{% set prevEntry = entry.getPrev(videoList) %}
+	{% set nextEntry = entry.getNext(videoList) %}
+	{% set lastEntry = videoList.last() %}
+	{% set firstEntry = videoList.first() %}
+
+	{# loop entries #}
+	{% if prevEntry %}
+		{% set prevEntry = entry.getPrev(videoList) %}
+	{% else %}
+		{% set prevEntry = lastEntry %}
+	{% endif %}
+
+	{% if nextEntry %}
+		{% set nextEntry = entry.getNext(videoList) %}
+	{% else %}
+		{% set nextEntry = firstEntry %}
+	{% endif %}
 
 	<section class="production-navigation">
 		<div class="wrapper">
