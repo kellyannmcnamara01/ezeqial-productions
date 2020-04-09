@@ -7,7 +7,7 @@
 			<h1 class="heading-one">{{ entry.title }}</h1>
 
 			<div class="production-cards">
-				{% for caseStudy in craft.entries.section('productionCaseStudies').orderBy('dateCreated desc').all() %}
+				{% for caseStudy in craft.entries.section('productionCaseStudies').all() %}
 					<a href="{{ caseStudy.url }}" aria-label="{{ caseStudy.ariaLabel }}" class="production-card card-link">
 						<div class="production-card__image">
 							{% set poster = caseStudy.posterPicker.one().getUrl('productionPoster') %}
