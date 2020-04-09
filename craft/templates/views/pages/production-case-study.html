@@ -41,6 +41,7 @@
 	</section>
 
 
+
 	{# Set parameters for prev/next elements list #}
 	{% set videoList = craft.entries.section('productionCaseStudies') %}
 
@@ -48,7 +49,7 @@
 	{% set prevEntry = entry.getPrev(videoList) %}
 	{% set nextEntry = entry.getNext(videoList) %}
 	{% set lastEntry = videoList.last() %}
-	{% set firstEntry = videoList.first() %}
+	{% set firstEntry = videoList.one() %}
 
 	{# loop entries #}
 	{% if prevEntry %}
