@@ -27,40 +27,38 @@
 						    <input type="hidden" name="action" value="contact-form/send">
 						    {{ redirectInput('contact/thank-you') }}
 
-						    <div class="form-field half">
-							    <h3><label for="first-name">First Name</label></h3>
-							    <input id="first-name" type="text" name="firstName" value="{{ message.firstName ?? '' }}">
-							    {{ message is defined and message ? errorList(message.getErrors('firstName')) }}
-							</div>
+						    
+
 							<div class="form-field half">
-							    <h3><label for="last-name">Last Name</label></h3>
-							    <input id="last-name" type="text" name="lastName" value="{{ message.lastName ?? '' }}">
-							    {{ message is defined and message ? errorList(message.getErrors('lastName')) }}
+								<h3><label for="from-name">First Name *</label></h3>
+							    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" required>
+							    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+	    					</div>
+
+							<div class="form-field half">
+							    <h3><label for="last-name">Last Name *</label></h3>
+								<input id="last-name" type="text" name="message[Last Name]" value="" required>
 							</div>
 						    <div class="form-field half">
-							    <h3><label for="from-email">Email</label></h3>
-							    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+							    <h3><label for="from-email">Email *</label></h3>
+							    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" required>
 							    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 							</div>
-						    <div class="form-field half">
-							    <h3><label for="from-phone">Phone</label></h3>
-							    <input id="from-phone" type="tel" name="fromPhone" value="{{ message.fromPhone ?? '' }}">
-							    {{ message is defined and message ? errorList(message.getErrors('fromPhone')) }}
+							<div class="form-field half">
+							    <h3><label for="phone">Phone</label></h3>
+								<input id="phone" type="text" name="message[Phone]" value="">
 							</div>
 						    <div class="form-field half">
 							    <h3><label for="company">Company</label></h3>
-							    <input id="company" type="text" name="company" value="{{ message.company ?? '' }}">
-							    {{ message is defined and message ? errorList(message.getErrors('company')) }}
+								<input id="company" type="text" name="message[Company]" value="">
 							</div>
 						    <div class="form-field half">
 						    	<h3><label for="project-name">Project Name</label></h3>
-						    	<input id="project-name" type="text" name="projectName" value="{{ message.projectName ?? '' }}">
-						    	{{ message is defined and message ? errorList(message.getErrors('projectName')) }}
+								<input id="project-name" type="text" name="message[Project]" value="">
 							</div>
 						    <div class="form-field">
 							    <h3><label for="message">Message</label></h3>
-							    <textarea rows="3" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
-							    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+							    <textarea rows="3" cols="40" id="message" name="message[body]">{{ message.message.body ?? '' }}</textarea>
 							</div>
 						    <input type="submit" value="Send">
 						</form>

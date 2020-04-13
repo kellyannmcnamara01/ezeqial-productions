@@ -1,0 +1,17 @@
+{# Sitemap URL #}
+Sitemap: {{ url(seo.sitemapName ~ '.xml') }}
+
+{# Disallows #}
+{% if craft.app.config.env != 'production' %}
+
+{# Disallow access to everything when NOT in production #}
+User-agent: *
+Disallow: /
+
+{% else %}
+
+{# Disallow access to cpresources/ when live #}
+User-agent: *
+Disallow: /cpresources/
+
+{% endif %}
